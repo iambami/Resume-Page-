@@ -116,8 +116,8 @@ nav ul {
    background-image:url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
    background-repeat: no-repeat;
    background-size: cover;
-   background-position: bottom center;
-   height: 70vh;
+   background-position: bottom center; 
+   height: 100vh;
    color: #222;
    display: flex;
    justify-content: center;
@@ -142,7 +142,7 @@ nav ul {
     background: #fff;
     display: grid;
     grid-template-columns: 50% 1fr;
-    grid-gap: 3rem;
+    grid-gap: 4 rem;
     list-style: none;
     padding: 2rem;
 }
