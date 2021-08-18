@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Josefin:wght@400;700&display=swap');
 
 
 * {
@@ -7,9 +7,53 @@
     padding: 0;
 }
 
+h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: salmon;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.5;
+}
+
+section + section {
+    margin-top: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li +li {
+    margin-top: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+ 
 body {
-    font-family: 'Open+Sans', sans-serif;
+    font-family: 'Josefin', sans-serif;
     color: #222;
+    padding: 1rem;
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -79,7 +123,7 @@ nav ul {
    justify-content: center;
    align-items: center;
    position: relative;
-   margin-bottom: 20px;
+   margin-bottom: 10px;
    z-index: -2;
 }
 
@@ -93,6 +137,48 @@ nav ul {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 8888px;
+    width: 15rem;
+    height: 15rem;
+}
+
+.profile p {
+    color: #888;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: o.5;
+    margin: 0;
+}
+
+.contact ul {
+    margin-top: -2rem;
+}
+
+.contact li {
+    text-align: right;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    color: #888;
+    border-bottom: 1px solid #888;
+    font-size: 12px 
+}
+
+.summary p {
+    text-align: justify;
+}
+
+.timeline {
+    grid: ;
+}
+
 
 .hero h1 {
     font-size: 46px;
