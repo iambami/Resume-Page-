@@ -13,11 +13,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     border-top: 1px solid #888;
     border-bottom: 1px solid #888;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     margin-bottom: 2rem;
 }
 
@@ -51,8 +51,8 @@ ul {
  
 body {
     font-family: 'Josefin', sans-serif;
-    color: #222;
-    padding: 1rem;
+    background-color: #555;
+    padding: 2rem 2.5rem;
     line-height: 1.5;
     margin: 0;
 }
@@ -117,7 +117,7 @@ nav ul {
    background-repeat: no-repeat;
    background-size: cover;
    background-position: bottom center;
-   height: 100vh;
+   height: 70vh;
    color: #222;
    display: flex;
    justify-content: center;
@@ -136,6 +136,15 @@ nav ul {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+}
+
+.resume {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-gap: 3rem;
+    list-style: none;
+    padding: 2rem;
 }
 
 
@@ -157,7 +166,9 @@ nav ul {
     line-height: o.5;
     margin: 0;
 }
-
+.contact {
+    padding-top: 1.5rem;
+}
 .contact ul {
     margin-top: -2rem;
 }
@@ -167,18 +178,12 @@ nav ul {
     text-transform: uppercase;
     padding: 0.5rem;
     color: #888;
-    border-bottom: 1px solid #888;
     font-size: 12px 
 }
 
-.summary p {
-    text-align: justify;
+.work.exprience {
+    padding: 2rem;
 }
-
-.timeline {
-    grid: ;
-}
-
 
 .hero h1 {
     font-size: 46px;
