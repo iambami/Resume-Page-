@@ -94,6 +94,10 @@ nav ul {
     transition: all 0.3s ease-in-out;
 }
 
+.nav img {
+    color: #fff;
+}
+
 .nav.active {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -118,7 +122,7 @@ nav ul {
    background-size: cover;
    background-position: bottom center; 
    height: 100vh;
-   color: #222;
+   color: red;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -142,7 +146,7 @@ nav ul {
     background: #fff;
     display: grid;
     grid-template-columns: 50% 1fr;
-    grid-gap: 4 rem;
+    grid-gap: 4rem;
     list-style: none;
     padding: 2rem;
 }
@@ -191,6 +195,7 @@ nav ul {
 }
 
 .hero p {
+    color: red;
     font-size: 20px;
     letter-spacing: 1px;
 }
