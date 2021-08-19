@@ -199,6 +199,11 @@ nav ul {
     font-size: 20px;
     letter-spacing: 1px;
 }
+.hobbies p {
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
 
 .content h2, 
 .content h3 {
