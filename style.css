@@ -141,7 +141,7 @@ nav ul {
 }
 
 .resume {
-    background: #fff;
+    background-color: #888 transparent;
     display: grid;
     grid-template-columns: 50% 1fr;
     grid-gap: 4rem;
