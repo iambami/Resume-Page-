@@ -120,7 +120,7 @@ nav ul {
    background-size: cover;
    background-position: bottom center; 
    height: 100vh;
-   color: red;
+   color: rgb(138, 35, 35);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -143,7 +143,7 @@ nav ul {
 .resume {
     background-color: #888 transparent;
     display: grid;
-    grid-template-columns: 50% 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 50%));
     grid-gap: 4rem;
     list-style: none;
     padding: 2rem;
@@ -193,7 +193,7 @@ nav ul {
 }
 
 .hero p {
-    color: red;
+    color: rgb(138, 35, 35);
     font-size: 20px;
     letter-spacing: 1px;
 }
