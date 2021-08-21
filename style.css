@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Josefin:wght@400;700&display=swap");
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+:root {
+    --theme: #6200ea;
 }
 
 h1 {
@@ -15,10 +18,11 @@ h1 {
 h2 {
     font-size: 1.1rem;
     text-transform: uppercase;
-    border-top: 1px solid #888;
-    border-bottom: 1px solid #888;
+    border-top: 1px solid var(--theme);
+    border-bottom: 1px solid var(--theme);
     padding: 0.75rem 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    color: var(--theme);
 }
 
 h3 {
@@ -41,40 +45,68 @@ a {
     color: inherit;
 }
 
-li +li {
-    margin-top: 1rem;
-}
-
 ul {
     list-style: none;
 }
- 
+
 body {
-    font-family: 'Josefin', sans-serif;
+    font-family: "Josefin", sans-serif;
     line-height: 1.5;
     margin: 0;
+    overflow-x: hidden;
+}
+
+button {
+    border-radius: 3px;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: none;
+    transition: 0.3s ease;
+    border: 1px solid var(--theme);
+}
+
+.btn.outline {
+    color: var(--theme);
+    background: none;
+}
+.btn.fill {
+    color: white;
+    background: var(--theme);
+}
+
+.outline:hover {
+    color: white;
+    background: var(--theme);
+}
+.fill:hover {
+    color: var(--theme);
+    background: none;
 }
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0rem 2rem;
 }
-
 
 .nav {
     position: fixed;
-    background-color: #222;
     top: 0;
     left: 0;
     right: 0;
     transition: all 0.3s ease-in-out;
+    z-index: 999;
+    background: white;
 }
 
 .nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -83,17 +115,41 @@ nav ul {
     list-style-type: none;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    transition: 0.5s cubic-bezier(0, 1, 1, 1);
 }
 
 .nav a {
-    color: #fff;
+    color: #444;
     text-decoration: none;
-    padding: 7px 15px;
+    padding: 6px 0px;
     transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+}
+
+.nav a::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: var(--theme);
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: 0.3s ease-out;
+}
+
+.nav a:hover::before {
+    transform: scaleX(1);
 }
 
 .nav img {
-    color: #fff;
+    width: 150px;
+    height: auto;
 }
 
 .nav.active {
@@ -104,51 +160,30 @@ nav ul {
 .nav.active a {
     color: #000;
 }
-
-.nav.active .container {
-    padding: 10px 0; 
+.nav.active a {
+    color: #000;
 }
 
-.nav a.current, .nav a:hover {
-    color: yellow;
-    font-weight: bold;
+.nav.active .container {
+    padding: 10px 0;
+}
+
+.nav a.current::before {
+    width: 100%;
 }
 
 .hero {
-   background-image:url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: bottom center; 
-   height: 100vh;
-   color: rgb(138, 35, 35);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: relative;
-   margin-bottom: 10px;
-   z-index: -2;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .resume {
-    background-color: #888 transparent;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 50%));
-    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-gap: 50px;
     list-style: none;
-    padding: 2rem;
+    padding: 3rem 0;
 }
-
 
 .profile {
     text-align: center;
@@ -168,42 +203,26 @@ nav ul {
     line-height: o.5;
     margin: 0;
 }
-.contact {
-    padding-top: 1.5rem;
-}
-.contact ul {
-    margin-top: -2rem;
-}
 
 .contact li {
     text-align: right;
     text-transform: uppercase;
     padding: 0.5rem;
     color: #888;
-    font-size: 12px 
-}
-
-.work.exprience {
-    padding: 2rem;
+    font-size: 12px;
 }
 
 .hero h1 {
     font-size: 46px;
-    margin: -20px 0 20px;
 }
 
-.hero p {
-    color: rgb(138, 35, 35);
-    font-size: 20px;
-    letter-spacing: 1px;
-}
 .hobbies p {
     font-size: 20px;
     letter-spacing: 1px;
     padding-bottom: 1rem;
 }
 
-.content h2, 
+.content h2,
 .content h3 {
     font-size: 150%;
     margin: 20px 0;
@@ -215,5 +234,214 @@ nav ul {
     letter-spacing: 1.2px;
 }
 
+.get-in-touch {
+    padding: 12px 20px;
+}
 
- 
+.get-in-touch:hover {
+    background: var(--theme);
+    color: white;
+}
+
+.hero-wrapper {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-wrapper .text {
+    display: grid;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+}
+.hero-wrapper .img-wrapper {
+    min-height: 85vh;
+    align-self: flex-end;
+    flex: 1;
+}
+.hero-wrapper .text h1 {
+    font-family: Gilroy;
+    font-weight: 500;
+    mix-blend-mode: luminosity;
+}
+.hero-wrapper .text p {
+    font-size: 14px;
+}
+
+.hero-wrapper .img-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.hero-wrapper .img-wrapper img {
+    height: 80vh;
+    width: auto;
+    margin-top: auto;
+    filter: drop-shadow(0.6rem 0.6rem 0.6rem #6200ea2c);
+}
+
+.cta {
+    display: flex;
+    gap: 10px;
+}
+
+.cta .cta-btn {
+    padding: 12px 26px;
+}
+
+section.profile {
+    background: #eee;
+    padding: 50px;
+}
+
+span.circle {
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 35px solid var(--theme);
+    border-radius: 50%;
+    right: -8%;
+    bottom: 15%;
+    z-index: -2;
+}
+
+span.circle:nth-child(2) {
+    left: -10%;
+    bottom: 60%;
+    transform: scale(1.5);
+}
+
+.column {
+    display: grid;
+    gap: 50px;
+}
+
+.nav i {
+    color: var(--theme);
+    display: none;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+}
+
+.nav i.fa-times {
+    z-index: 9999;
+    color: white;
+}
+
+nav label {
+    display: inline-block;
+}
+
+nav input {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .hero-wrapper {
+        padding: 0;
+        padding-top: 150px;
+        grid-template-columns: auto;
+    }
+
+    .nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        background: var(--theme);
+        transform: translateX(100%);
+    }
+
+    .nav ul a {
+        color: white;
+    }
+
+    section.profile {
+        padding: 20px 0px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .nav i.fa-bars {
+        display: inline-block;
+    }
+    input:checked ~ ul {
+        transform: translateX(0);
+    }
+    input:checked + label i.fa-times {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hero-wrapper .img-wrapper {
+        width: 100%;
+    }
+    .hero-wrapper .img-wrapper img {
+        height: auto;
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .hero-wrapper .text h1 {
+        font-size: 30px;
+    }
+    span.circle {
+        opacity: 0.5;
+    }
+}
+
+/* Timeline design for Work history */
+
+ul.timeline,
+ul.timeline .timeline_item {
+    position: relative;
+}
+
+ul.timeline {
+    padding-left: 50px;
+}
+
+ul.timeline::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 100%;
+    background: var(--theme);
+    border-radius: 20px;
+    left: 20px;
+    top: -10px;
+}
+
+.timeline_item::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--theme);
+    border-radius: 50%;
+    top: 0px;
+    left: -35px;
+    border: 2px solid var(--theme);
+}
+.timeline_item.till-date:before {
+    background: white;
+}
