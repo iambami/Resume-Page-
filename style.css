@@ -116,7 +116,7 @@ nav ul {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    transition: 0.3s;
+    transition: 0.5s cubic-bezier(0, 1, 1, 1);
 }
 
 .nav a {
@@ -407,4 +407,41 @@ nav input {
     span.circle {
         opacity: 0.5;
     }
+}
+
+/* Timeline design for Work history */
+
+ul.timeline,
+ul.timeline .timeline_item {
+    position: relative;
+}
+
+ul.timeline {
+    padding-left: 50px;
+}
+
+ul.timeline::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 100%;
+    background: var(--theme);
+    border-radius: 20px;
+    left: 20px;
+    top: -10px;
+}
+
+.timeline_item::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--theme);
+    border-radius: 50%;
+    top: 0px;
+    left: -35px;
+    border: 2px solid var(--theme);
+}
+.timeline_item.till-date:before {
+    background: white;
 }
